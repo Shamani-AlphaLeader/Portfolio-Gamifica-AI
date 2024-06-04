@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+  
+body {
+    background-color: black;
+  }
+
+.container-game {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
