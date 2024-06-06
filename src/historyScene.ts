@@ -1,9 +1,37 @@
-import { Actor, Color, Engine, Keys, Scene, vec } from "excalibur";
+import { Actor, Color, Engine, Keys, Scene, SceneActivationContext, FadeInOut, Transition, vec } from "excalibur";
 import { Resources } from "./resources";
 
 export class historyScene extends Scene {
     // Declaracao do elementoTexto
     elementoTexto?: HTMLElement
+
+    // Metodo para esmaecer um elemento HTML
+    fadeOutElement(elemento: HTMLElement) {
+        let opacidade = parseFloat(elemento.style.opacity)
+
+        // Repetir diminuicao da opacidade
+        setInterval(()=> {
+
+
+        // Pegar opacidade do elemento HTML
+        if (opacidade > 0) {
+
+            // Diminuir a opacidade
+            opacidade -= 0.01
+
+            //Atualizar a opacidade do elemento
+            elemento.style.opacity = opacidade.toString()
+        }
+    }, 9)
+}
+
+    onTransition(direction: "in" | "out"): Transition | undefined {
+        return new FadeInOut({
+            direction: direction,
+            color: Color.Black,
+            duration: 1000
+        })
+    }
 
     onInitialize(engine: Engine<any>): void {
         this.backgroundColor = Color.fromHex("#403f4c")
@@ -51,6 +79,10 @@ export class historyScene extends Scene {
         // Configurar a cena para monitorar o evento de tela pressionada
         this.input.keyboard.on("press", (event) => {
             if (event.key == Keys.Enter) {
+
+                // Criar a transicao suave do elementoTexto
+                this.fadeOutElement(this.elementoTexto!)
+
                 // Direcionar para a proxima cena
                 engine.goToScene("gamificacao")
             }
@@ -58,5 +90,9 @@ export class historyScene extends Scene {
 
     }
 
+    onDeactivate(context: SceneActivationContext<undefined>): void {
+        // Remover o elementoTexto da tela
+        this.elementoTexto?.remove()
 
+    }
 }
