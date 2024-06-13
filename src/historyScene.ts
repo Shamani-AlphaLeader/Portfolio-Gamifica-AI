@@ -65,7 +65,7 @@ export class historyScene extends Scene {
         })
 
         // Utilizar imagem do logo
-        let imagemLogoVert = Resources.LogoVert.toSprite()
+        let imagemLogoVert = Resources.LogoVertical.toSprite()
 
         // Aplicar zoom na imagem
         imagemLogoVert.scale = vec(0.7, 0.7)

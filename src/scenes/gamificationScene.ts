@@ -41,7 +41,7 @@ fadeOutElement(elemento: HTMLElement) {
         this.elementoHTML.classList.add("gamificacao")
 
         // Carregando a imagem
-        let spriteLogoGamificaAi = Resources.GameController.toSprite()
+        let spriteLogoGamificaAi = Resources.LogoVertical.toSprite()
         spriteLogoGamificaAi.scale = vec(0.7, 0.7)
 
         // Criacao do Actor para a imagem
