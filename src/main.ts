@@ -18,7 +18,7 @@ game.addScene("exposicao", new expoScene())
 
 
 game.start(loader).then(() => {
-  game.goToScene("bemvindo"),{
+  game.goToScene("exposicao"),{
 
   }
   //Adiciona transicao lenta ao ir para a a welcomeScene
