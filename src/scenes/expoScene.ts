@@ -19,7 +19,7 @@ export class expoScene extends Scene {
         // Carregar o mapa
         let tiledMap = Resources.Mapa
 
-        // Definir offset para renderizaçãso do mapa 
+        // Definir offset para renderização do mapa 
         let offsetX = 138
         let offsetY = 100
 

@@ -14,10 +14,16 @@ import tsxBibliotecaPath from "./maps/tileset_biblioteca.tsx?url"
 
 import tmxMapaPath from "./maps/showroom_map.tmx?url"
 import playerSpritePath from "./sprites/Bruno_Shamani_player.png"
+import LeonaSpritePath from "./sprites/Leona_Seo_Hyun_npc.png"
+import RyoSpritePath from "./sprites/Ryo_Hayasaki_Shamani_npc.png"
+import RyubiSpritePath from "./sprites/Ryubi_Hayasaki_npc.png"
 export const Resources = {
   Sword: new ImageSource(sword),
   Logo: new ImageSource(logo),
   PlayerSpriteSheet: new ImageSource(playerSpritePath, { filtering: ImageFiltering.Pixel }),
+  LeonaSpritesheet: new ImageSource(LeonaSpritePath, { filtering: ImageFiltering.Pixel }),
+  RyoSpriteSheet: new ImageSource(RyoSpritePath, { filtering: ImageFiltering.Pixel }),
+  RyubiSpriteSheet: new ImageSource(RyubiSpritePath, { filtering: ImageFiltering.Pixel }),
   LogoVertical: new ImageSource(logoVertical),
   Mapa: new TiledResource(tmxMapaPath, {
     pathMap: [
