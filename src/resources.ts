@@ -1,4 +1,4 @@
-import { ImageFiltering, ImageSource, Loader } from "excalibur";
+import { ImageFiltering, ImageSource, Loader, Sound } from "excalibur";
 import { TiledResource } from "@excaliburjs/plugin-tiled";
 
 import sword from "./images/sword.png";
@@ -14,17 +14,25 @@ import tsxBibliotecaPath from "./maps/tileset_biblioteca.tsx?url"
 
 import tmxMapaPath from "./maps/showroom_map.tmx?url"
 import playerSpritePath from "./sprites/Bruno_Shamani_player.png"
-import LeonaSpritePath from "./sprites/Leona_Seo_Hyun_npc.png"
-import RyoSpritePath from "./sprites/Ryo_Hayasaki_Shamani_npc.png"
-import RyubiSpritePath from "./sprites/Ryubi_Hayasaki_npc.png"
+import leonaSpritePath from "./sprites/Leona_Seo_Hyun_npc.png"
+import ryoSpritePath from "./sprites/Ryo_Hayasaki_Shamani_npc.png"
+import ryubiSpritePath from "./sprites/Ryubi_Hayasaki_npc.png"
+
+import lisa from "./sounds/LiSA - HELLO WORLD.mp3"
+import ritmada from "./sounds/ritmada_zelda.mp3"
+import classico from "./sounds/zelda.mp3"
+
 export const Resources = {
   Sword: new ImageSource(sword),
   Logo: new ImageSource(logo),
   PlayerSpriteSheet: new ImageSource(playerSpritePath, { filtering: ImageFiltering.Pixel }),
-  LeonaSpritesheet: new ImageSource(LeonaSpritePath, { filtering: ImageFiltering.Pixel }),
-  RyoSpriteSheet: new ImageSource(RyoSpritePath, { filtering: ImageFiltering.Pixel }),
-  RyubiSpriteSheet: new ImageSource(RyubiSpritePath, { filtering: ImageFiltering.Pixel }),
+  LeonaSpritesheet: new ImageSource(leonaSpritePath, { filtering: ImageFiltering.Pixel }),
+  RyoSpriteSheet: new ImageSource(ryoSpritePath, { filtering: ImageFiltering.Pixel }),
+  RyubiSpriteSheet: new ImageSource(ryubiSpritePath, { filtering: ImageFiltering.Pixel }),
   LogoVertical: new ImageSource(logoVertical),
+  LiSaBGM: new Sound(lisa),
+  RitmadaBGM: new Sound(ritmada),
+  ClassicoBGM: new Sound(classico),
   Mapa: new TiledResource(tmxMapaPath, {
     pathMap: [
       { path: "showroom_map.tmx", output: tmxMapaPath },

@@ -1,4 +1,4 @@
-import { Actor, CollisionType, Color, Engine, FadeInOut, Scene, Transition, vec } from "excalibur";
+import { Actor, CollisionType, Color, Engine, FadeInOut, Resource, Scene, Transition, vec } from "excalibur";
 import { Resources } from "../resources";
 import { Player } from "../actors/player";
 import { Npc } from "../actors/npc";
@@ -15,6 +15,13 @@ export class expoScene extends Scene {
     onInitialize(engine: Engine<any>): void {
         // Ativar o modo de debug
         // -> engine.toggleDebug()
+
+        // Carregar a musica de fundo (BGM) - Background Music
+        let musicaFundo = Resources.LiSaBGM
+
+        // Confgurar a musica e executar
+        musicaFundo.loop = true
+        //musicaFundo.play(0.7)
 
         // Carregar o mapa
         let tiledMap = Resources.Mapa
