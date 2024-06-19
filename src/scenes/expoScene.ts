@@ -17,7 +17,7 @@ export class expoScene extends Scene {
         // -> engine.toggleDebug()
 
         // Carregar a musica de fundo (BGM) - Background Music
-        let musicaFundo = Resources.LiSaBGM
+        let musicaFundo = Resources.LiSa0BGM
 
         // Confgurar a musica e executar
         musicaFundo.loop = true

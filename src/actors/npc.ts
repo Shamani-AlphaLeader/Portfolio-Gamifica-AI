@@ -1,4 +1,4 @@
-import { Actor, CollisionType, Color, Engine, SpriteSheet, Vector } from "excalibur";
+import { Actor, Animation, CollisionType, Color, Engine, SpriteSheet, Vector } from "excalibur";
 import { Resources } from "../resources";
 
 export class Npc extends Actor {
@@ -11,9 +11,6 @@ export class Npc extends Actor {
             color: cor,
             collisionType: CollisionType.Fixed
         })
-    }
-
-    onInitialize(engine: Engine<any>): void {
 
         // Configurar sprite do player
         const LeonaSpritesheet = SpriteSheet.fromImageSource({
@@ -35,7 +32,7 @@ export class Npc extends Actor {
         const duracaoFrameAnimacao = 70
 
         //Idle frente
-        const frontIdle = new Animation({
+        const frontIdleLeona = new Animation({
             frames: [
                 { graphic: LeonaSpritesheet.getSprite(18, 1) },
                 { graphic: LeonaSpritesheet.getSprite(19, 1) },
@@ -47,7 +44,7 @@ export class Npc extends Actor {
             frameDuration: duracaoFrameAnimacao
         })
         
-        this.graphics.add("front-idleLeona", frontIdle)
+        this.graphics.add("front-idleLeona", frontIdleLeona)
         //definir animacao inicial do player
         this.graphics.use("front-idleLeona")
 
@@ -68,11 +65,10 @@ export class Npc extends Actor {
             }
         })
 
-        // Criar as animacoes
-        const duracaoFrameAnimacao = 70
+        
 
         //Idle frente
-        const frontIdle = new Animation({
+        const frontIdleRyo = new Animation({
             frames: [
                 { graphic: RyoSpriteSheet.getSprite(18, 1) },
                 { graphic: RyoSpriteSheet.getSprite(19, 1) },
@@ -84,7 +80,7 @@ export class Npc extends Actor {
             frameDuration: duracaoFrameAnimacao
         })
         
-        this.graphics.add("front-idleRyo", frontIdle)
+        this.graphics.add("front-idleRyo", frontIdleRyo)
         //definir animacao inicial do player
         this.graphics.use("front-idleRyo")
 
@@ -105,11 +101,9 @@ export class Npc extends Actor {
             }
         })
 
-        // Criar as animacoes
-        const duracaoFrameAnimacao = 70
-
+       
         //Idle frente
-        const frontIdle = new Animation({
+        const frontIdleRyubi = new Animation({
             frames: [
                 { graphic: RyubiSpriteSheet.getSprite(18, 1) },
                 { graphic: RyubiSpriteSheet.getSprite(19, 1) },
@@ -121,10 +115,15 @@ export class Npc extends Actor {
             frameDuration: duracaoFrameAnimacao
         })
         
-        this.graphics.add("front-idleRyubi", frontIdle)
+        this.graphics.add("front-idleRyubi", frontIdleRyubi)
         //definir animacao inicial do player
         this.graphics.use("front-idleRyubi")
 
+    }
+
+    onInitialize(engine: Engine<any>): void {
+
+        
     }
 
 

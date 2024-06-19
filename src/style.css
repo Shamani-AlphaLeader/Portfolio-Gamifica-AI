@@ -58,3 +58,42 @@ body {
   line-height: 2;
 
 }
+
+
+.textocase{
+  left: 5%;
+}
+
+.textocase {
+  width: 500px;
+  height: 600px;
+
+  padding: 40px;
+
+  background-color: #fff;
+  
+  border: solid 15px #cf5830;
+  border-radius: 30px;
+
+  color: black;
+  font-family: "Anta";
+
+  position: absolute;
+
+  top: 10%;
+}
+
+.textocase h2{
+  margin-bottom: 40px;
+
+  font-size: 30px;
+  text-align: center;
+}
+
+.textocase p{
+  font-size: 16px;
+  text-align: justify;
+
+  line-height: 2;
+
+}

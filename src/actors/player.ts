@@ -283,10 +283,24 @@ export class Player extends Actor {
 
                         if (this.ultimoColisor?.owner.name == "mesa_stand_b") {
                             console.log("voce interagiu com a mesa B ");
+                            engine.goToScene("case", {
+                                sceneActivationData: {
+                                    // Passa o nome do actor que interagiu com o player
+                                    nomeDoActor: this.ultimoColisor?.owner.name
+                                }
+                            })
+
+                            
                         }
 
                         if (this.ultimoColisor?.owner.name == "mesa_stand_c") {
                             console.log("voce interagiu com a mesa C ");
+                            engine.goToScene("case", {
+                                sceneActivationData: {
+                                    // Passa o nome do actor que interagiu com o player
+                                    nomeDoActor: this.ultimoColisor?.owner.name
+                                }
+                            })
                         }
 
                     }
