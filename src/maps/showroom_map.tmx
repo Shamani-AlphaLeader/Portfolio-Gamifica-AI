@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="29" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="19">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="29" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="20">
  <tileset firstgid="1" source="tileset_paredes.tsx"/>
  <tileset firstgid="8285" source="tileset_generic.tsx"/>
  <tileset firstgid="9533" source="tileset_estoque.tsx"/>
@@ -64,6 +64,9 @@
    <point/>
   </object>
   <object id="18" name="npc_c" x="687.455" y="222.182">
+   <point/>
+  </object>
+  <object id="19" name="npc_d" x="656.86" y="370.672">
    <point/>
   </object>
  </objectgroup>

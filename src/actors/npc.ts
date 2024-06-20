@@ -1,130 +1,87 @@
-import { Actor, Animation, CollisionType, Color, Engine, SpriteSheet, Vector } from "excalibur";
-import { Resources } from "../resources";
+import { Actor, CollisionType, Animation, Engine, SpriteSheet, Vector } from "excalibur"
+import { Resources } from "../resources"
 
 export class Npc extends Actor {
-    constructor(posicao: Vector, cor: Color, nome: string) {
+    constructor(posicao: Vector, nome: string) {
         super({
             pos: posicao,
             width: 32,
             height: 32,
             name: nome,
-            color: cor,
             collisionType: CollisionType.Fixed
         })
-
-        // Configurar sprite do player
-        const LeonaSpritesheet = SpriteSheet.fromImageSource({
-            image: Resources.LeonaSpritesheet,
-            grid: {
-                spriteWidth: 32,
-                spriteHeight: 64,
-                columns: 56,
-                rows: 20
-            },
-            spacing: {
-                originOffset: {
-                    y: 0
-                }
-            }
-        })
-
-        // Criar as animacoes
-        const duracaoFrameAnimacao = 70
-
-        //Idle frente
-        const frontIdleLeona = new Animation({
-            frames: [
-                { graphic: LeonaSpritesheet.getSprite(18, 1) },
-                { graphic: LeonaSpritesheet.getSprite(19, 1) },
-                { graphic: LeonaSpritesheet.getSprite(20, 1) },
-                { graphic: LeonaSpritesheet.getSprite(21, 1) },
-                { graphic: LeonaSpritesheet.getSprite(22, 1) },
-                { graphic: LeonaSpritesheet.getSprite(23, 1) },
-            ],
-            frameDuration: duracaoFrameAnimacao
-        })
-        
-        this.graphics.add("front-idleLeona", frontIdleLeona)
-        //definir animacao inicial do player
-        this.graphics.use("front-idleLeona")
-
-
-          // Configurar sprite do player
-          const RyoSpriteSheet = SpriteSheet.fromImageSource({
-            image: Resources.LeonaSpritesheet,
-            grid: {
-                spriteWidth: 32,
-                spriteHeight: 64,
-                columns: 56,
-                rows: 20
-            },
-            spacing: {
-                originOffset: {
-                    y: 0
-                }
-            }
-        })
-
-        
-
-        //Idle frente
-        const frontIdleRyo = new Animation({
-            frames: [
-                { graphic: RyoSpriteSheet.getSprite(18, 1) },
-                { graphic: RyoSpriteSheet.getSprite(19, 1) },
-                { graphic: RyoSpriteSheet.getSprite(20, 1) },
-                { graphic: RyoSpriteSheet.getSprite(21, 1) },
-                { graphic: RyoSpriteSheet.getSprite(22, 1) },
-                { graphic: RyoSpriteSheet.getSprite(23, 1) },
-            ],
-            frameDuration: duracaoFrameAnimacao
-        })
-        
-        this.graphics.add("front-idleRyo", frontIdleRyo)
-        //definir animacao inicial do player
-        this.graphics.use("front-idleRyo")
-
-       
-        // Configurar sprite do player
-        const RyubiSpriteSheet = SpriteSheet.fromImageSource({
-            image: Resources.LeonaSpritesheet,
-            grid: {
-                spriteWidth: 32,
-                spriteHeight: 64,
-                columns: 56,
-                rows: 20
-            },
-            spacing: {
-                originOffset: {
-                    y: 0
-                }
-            }
-        })
-
-       
-        //Idle frente
-        const frontIdleRyubi = new Animation({
-            frames: [
-                { graphic: RyubiSpriteSheet.getSprite(18, 1) },
-                { graphic: RyubiSpriteSheet.getSprite(19, 1) },
-                { graphic: RyubiSpriteSheet.getSprite(20, 1) },
-                { graphic: RyubiSpriteSheet.getSprite(21, 1) },
-                { graphic: RyubiSpriteSheet.getSprite(22, 1) },
-                { graphic: RyubiSpriteSheet.getSprite(23, 1) },
-            ],
-            frameDuration: duracaoFrameAnimacao
-        })
-        
-        this.graphics.add("front-idleRyubi", frontIdleRyubi)
-        //definir animacao inicial do player
-        this.graphics.use("front-idleRyubi")
-
     }
 
     onInitialize(engine: Engine<any>): void {
+        // Carregar os sprites
+        const spriteNpcA = SpriteSheet.fromImageSource({
+            image: Resources.LeonaSpritesheet,
+            grid: {
+                spriteWidth: 32,
+                spriteHeight: 64,
+                columns: 56,
+                rows: 20
+            }
+        })
 
-        
+        const spriteNpcB = SpriteSheet.fromImageSource({
+            image: Resources.RyoSpriteSheet,
+            grid: {
+                spriteWidth: 32,
+                spriteHeight: 64,
+                columns: 56,
+                rows: 20
+            }
+        })
+
+        const spriteNpcC = SpriteSheet.fromImageSource({
+            image: Resources.RyubiSpriteSheet,
+            grid: {
+                spriteWidth: 32,
+                spriteHeight: 64,
+                columns: 56,
+                rows: 20
+            }
+        })
+
+        const spriteNpcD = SpriteSheet.fromImageSource({
+            image: Resources.AkemiSpriteSheet,
+            grid: {
+                spriteWidth: 32,
+                spriteHeight: 64,
+                columns: 56,
+                rows: 20
+            }
+        })
+
+        // Definir o sprite de acordo com o NPC
+        let spriteDefinido
+
+        if(this.name == "npc_a") {
+            spriteDefinido = spriteNpcA
+        } else if (this.name == "npc_b") {
+            spriteDefinido = spriteNpcB
+        } else if (this.name == "npc_c") {
+            spriteDefinido = spriteNpcC 
+        } else if (this.name == "npc_d")
+        spriteDefinido = spriteNpcD {
+    } else {
+        console.log("Nome do NPC não previsto:", this.name);            
+
+        // Se tiver um spite definido -> Criar animação
+        if (spriteDefinido) {
+            const downIdle = new Animation({
+                frames: [
+                    { graphic: spriteDefinido.getSprite(18, 1) },
+                    { graphic: spriteDefinido.getSprite(19, 1) },
+                    { graphic: spriteDefinido.getSprite(20, 1) },
+                    { graphic: spriteDefinido.getSprite(21, 1) },
+                    { graphic: spriteDefinido.getSprite(22, 1) },
+                    { graphic: spriteDefinido.getSprite(23, 1) },
+                ],
+                frameDuration: 70
+            })
+            this.graphics.add(downIdle)
+        }
     }
-
-
 }

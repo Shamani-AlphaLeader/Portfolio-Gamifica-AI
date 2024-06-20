@@ -54,30 +54,34 @@ export class expoScene extends Scene {
         let npcSpawnPointA = tiledMap.getObjectsByName("npc_a")[0]
         let npcSpawnPointB = tiledMap.getObjectsByName("npc_b")[0]
         let npcSpawnPointC = tiledMap.getObjectsByName("npc_c")[0]
+        let npcSpawnPointD = tiledMap.getObjectsByName("npc_d")[0]
 
         // Configurar NPCs
         let npcA = new Npc(
             vec(npcSpawnPointA.x + offsetX, npcSpawnPointA.y + offsetY),
-            Color.Blue,
-            "NpcA"
+            npcSpawnPointA.tiledObject.name!
         )
 
         let npcB = new Npc(
             vec(npcSpawnPointB.x + offsetX, npcSpawnPointB.y + offsetY),
-            Color.Chartreuse,
-            "NpcB"
+            npcSpawnPointB.tiledObject.name!
         )
 
         let npcC = new Npc(
             vec(npcSpawnPointC.x + offsetX, npcSpawnPointC.y + offsetY),
-            Color.Yellow,
-            "NpcC"
+            npcSpawnPointC.tiledObject.name!
+        )
+
+        let npcD = new Npc(
+            vec(npcSpawnPointD.x + offsetX, npcSpawnPointD.y + offsetY),
+            npcSpawnPointD.tiledObject.name!
         )
 
         // Adicionar os NPCs
         this.add(npcA)
         this.add(npcB)
         this.add(npcC)
+        this.add(npcD)
 
         // Focar a camera no player
         this.camera.strategy.lockToActor(jogador)
