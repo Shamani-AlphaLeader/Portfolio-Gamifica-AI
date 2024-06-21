@@ -21,7 +21,7 @@ export class expoScene extends Scene {
 
         // Confgurar a musica e executar
         musicaFundo.loop = true
-        //musicaFundo.play(0.7)
+        musicaFundo.play(0.7)
 
         // Carregar o mapa
         let tiledMap = Resources.Mapa

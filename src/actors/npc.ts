@@ -57,16 +57,18 @@ export class Npc extends Actor {
         // Definir o sprite de acordo com o NPC
         let spriteDefinido
 
-        if(this.name == "npc_a") {
+        if (this.name == "npc_a") {
             spriteDefinido = spriteNpcA
         } else if (this.name == "npc_b") {
             spriteDefinido = spriteNpcB
         } else if (this.name == "npc_c") {
-            spriteDefinido = spriteNpcC 
-        } else if (this.name == "npc_d")
-        spriteDefinido = spriteNpcD {
-    } else {
-        console.log("Nome do NPC não previsto:", this.name);            
+            spriteDefinido = spriteNpcC
+        } else if (this.name == "npc_d") {
+
+            spriteDefinido = spriteNpcD
+        } else {
+            console.log("Nome do NPC não previsto:", this.name);
+        }
 
         // Se tiver um spite definido -> Criar animação
         if (spriteDefinido) {
